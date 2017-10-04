@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html ng-app="blocItOff">
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>Bloc Base Project</title>
-    <link rel="stylesheet" href="/styles/main.css">
+  <meta charset="UTF-8">
+  <title>Bloc If Off</title>
+  <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
-    <ui-view></ui-view>
+  <ui-view></ui-view>
 
-    <!-- Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angularjs.min.js"></script>
+  <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
-    <!-- AngularUI Router -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+  <!-- AngularUI Router -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
 
-    <!-- FireBase -->
-    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
-    <!-- AngularFire -->
-    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-    <script>
+  <!-- FireBase -->
+  <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+  <!-- Angular Cookies -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-cookies.js"></script>
+  <!-- AngularUI Bootstrap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+  <script>
   // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyDn8RbmIQZ72ii7eeVg2JuXOKeeqbbcj-M",
-            authDomain: "bloc-it-off-4ae56.firebaseapp.com",
-            databaseURL: "https://bloc-it-off-4ae56.firebaseio.com",
-            projectId: "bloc-it-off-4ae56",
-            storageBucket: "bloc-it-off-4ae56.appspot.com",
-            messagingSenderId: "71174002041"
-        };
-        firebase.initializeApp(config);
-    </script>
+    var config = {
+      apiKey: "AIzaSyDn8RbmIQZ72ii7eeVg2JuXOKeeqbbcj-M",
+      authDomain: "bloc-it-off-4ae56.firebaseapp.com",
+      databaseURL: "https://bloc-it-off-4ae56.firebaseio.com",
+      projectId: "bloc-it-off-4ae56",
+      storageBucket: "bloc-it-off-4ae56.appspot.com",
+      messagingSenderId: "71174002041"
+    };
+    firebase.initializeApp(config);
+  </script>
 
-    <!-- Application Files -->
-    <script src="/scripts/app.js"></script>
+  <!-- Application Files -->
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/services/Task.js"></script>
+  <script src="/scripts/controllers/HomeCtrl.js"></script>
 </body>
 </html>

@@ -1,8 +1,9 @@
 (function() {
-    function HomeCtrl() {
-    }
+  function HomeCtrl(Task) {
+    this.Task = Task;
+  }
 
-    angular
-        .module('blocItOff')
-        .controller('HomeCtrl', [HomeCtrl]);
+  angular
+    .module('blocItOff')
+    .controller('HomeCtrl', ['Task', '$uibModal', HomeCtrl]);
 })();

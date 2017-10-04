@@ -1,1 +1,10 @@
-<h1>Home Page</h1>
+<h1>Bloc It Off!</h1>
+<div class="newTask">
+  <form class="taskadd" novalidate>
+    <input ng-model="taskname">
+    <input type="submit" ng-click="home.Task.add(taskname)" value="Create Task">
+  </form>
+</div>
+<div class="tasks" ng-repeat="obj in home.Task.all">
+  <h2>{{ home.Task.all[$index].task }}</h2>
+</div>
