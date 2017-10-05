@@ -1,17 +1,25 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <form class="taskadd" novalidate>
-        <input ng-model="taskname" placeholder="Task">
-        <input ng-model="priority" placeholder="Priority">
-        <input type="submit" ng-click="home.Task.add(taskname,priority)" value="Create Task">
-      </form>
+        <input ng-model="taskname" placeholder="Task Description">
     </div>
+    <div class="col-md-4">
+      <select ng-model="priority" placeholder="Priority">
+        <option value="" diabled selected>Priority</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Medium">Low</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <input type="submit" ng-click="home.Task.add(taskname,priority)" value="Create Task">
+    </form>
+    </div>
+
   </div>
   <div class="row">
-    <div class="col-md-4"><h4>Task Name</h4></div>
+    <div class="col-md-4"><h4>Task</h4></div>
     <div class="col-md-4"><h4>Priority</h4></div>
     <div class="col-md-4"><h4>Complete?</h4></div>
   </div>
