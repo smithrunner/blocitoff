@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"><h4>Task Name</h4></div>
+    <div class="col-md-4"><h4>Priority</h4></div>
+    <div class="col-md-4"><h4>Status</h4></div>
+  </div>
+  <div class="row tasklist" ng-repeat="obj in history.Task.all_tasks">
+    <div class="col-sm-4 tasks">
+      <div class="animate-show-hide" ng-show="history.Task.checkTime(history.Task.all_tasks[$index])">
+        <h2>{{ history.Task.all_tasks[$index].task_title }}</h2>
+      </div>
+    </div>
+    <div class="col-sm-4 tasks" ng-show="history.Task.checkTime(history.Task.all_tasks[$index])">
+      <h2>{{ history.Task.all_tasks[$index].priority}}</h2>
+    </div>
+    <div class="col-sm-4 tasks" ng-show="history.Task.checkTime(history.Task.all_tasks[$index])">
+      <h2>Completed</h2>
+    </div>
+  </div>
+</div>

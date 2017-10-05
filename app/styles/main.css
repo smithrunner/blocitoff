@@ -3,16 +3,29 @@
   background-color: grey;
 }
 
-
 .col-sm-4 {
   background-color: grey;
 }
 
-.tasks {
-  background-color: #A9A9A9;
+.col-sm-4 a {
+  color: black;
 }
 
-.tasks:hover {
+.tasks {
+  background-color: #A9A9A9;
+
+}
+
+.taskscomplete {
+  background-color: #A9A9A9;
+
+}
+
+.taskscomplete:hover {
   background-color: black;
   color: white;
+}
+
+.tasklist {
+  margin-top: 3%;
 }

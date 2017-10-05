@@ -5,7 +5,7 @@
     var tasks = $firebaseArray(ref);
     Task.instance = 0;
 
-    Task.add = function(task) {
+    Task.add = function(task,priority) {
       var datetime = new Date();
       var time = datetime.getTime();
       var finish_time = time + 604800000
@@ -13,18 +13,19 @@
       var newTask = {
         task_title : task,
         finish_time : finish_time,
-        finished : 'false'
+        finished : 'false',
+        priority : priority
       };
       tasks.$add(newTask);
     };
 
-    Task.checkTime = function(finish_time , finished) {
+    Task.checkTime = function(task) {
         var date = new Date();
         var time = date.getTime();
 
-        if (finished == 'true') {
+        if (task.finished == 'true') {
           return true;
-        } else if (time > finish_time) {
+        } else if (time > task.finish_time) {
           return true;
         } else {
           return false;

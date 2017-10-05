@@ -1,26 +1,31 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <h1>Bloc It Off!</h1>
     </div>
     <div class="col-md-6">
       <form class="taskadd" novalidate>
-        <input ng-model="taskname">
-        <input type="submit" ng-click="home.Task.add(taskname)" value="Create Task">
+        <input ng-model="taskname" placeholder="Task">
+        <input ng-model="priority" placeholder="Priority">
+        <input type="submit" ng-click="home.Task.add(taskname,priority)" value="Create Task">
       </form>
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-4">
-      <div class="tasks" ng-repeat="obj in home.Task.all_tasks">
-        <div class="animate-show-hide" ng-hide="home.Task.checkTime(home.Task.all_tasks[$index].finish_time, home.Task.all_tasks[$index].finished)">
-          <h2>{{ home.Task.all_tasks[$index].task_title }}</h2>
-          <h2 ng-click="home.Task.complete(home.Task.all_tasks[$index])">Completed?</h2>
-        </div>
+    <div class="col-md-4"><h4>Task Name</h4></div>
+    <div class="col-md-4"><h4>Priority</h4></div>
+    <div class="col-md-4"><h4>Complete?</h4></div>
+  </div>
+  <div class="row tasklist" ng-repeat="obj in home.Task.all_tasks">
+    <div class="col-sm-4 tasks">
+      <div class="animate-show-hide" ng-hide="home.Task.checkTime(home.Task.all_tasks[$index])">
+        <h2>{{ home.Task.all_tasks[$index].task_title }}</h2>
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4 tasks" ng-hide="home.Task.checkTime(home.Task.all_tasks[$index])">
+      <h2>{{ home.Task.all_tasks[$index].priority}}</h2>
     </div>
-    <div class="col-sm-4"></div>
+    <div class="col-sm-4 taskscomplete" ng-hide="home.Task.checkTime(home.Task.all_tasks[$index])">
+      <h2 ng-click="home.Task.complete(home.Task.all_tasks[$index])">Check it off!</h2>
+    </div>
   </div>
 </div>
