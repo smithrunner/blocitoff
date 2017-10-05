@@ -11,3 +11,8 @@
 .tasks {
   background-color: #A9A9A9;
 }
+
+.tasks:hover {
+  background-color: black;
+  color: white;
+}

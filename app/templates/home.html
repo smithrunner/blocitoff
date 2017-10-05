@@ -12,11 +12,15 @@
   </div>
   <div class="row">
     <div class="col-sm-4">
-      <div class="tasks" ng-repeat="obj in home.Task.all">
-        <h2>{{ home.Task.all[$index].task }}</h2>
+      <div class="tasks" ng-repeat="obj in home.Task.all_tasks">
+        <div class="animate-show-hide" ng-hide="home.Task.checkTime(home.Task.all_tasks[$index].finish_time, home.Task.all_tasks[$index].finished)">
+          <h2>{{ home.Task.all_tasks[$index].task_title }}</h2>
+          <h2 ng-click="home.Task.complete(home.Task.all_tasks[$index])">Completed?</h2>
+        </div>
       </div>
     </div>
-    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+    </div>
     <div class="col-sm-4"></div>
   </div>
 </div>
