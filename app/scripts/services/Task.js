@@ -13,7 +13,7 @@
       var newTask = {
         task_title : task,
         finish_time : finish_time,
-        finished : 'false',
+        finished : false,
         priority : priority
       };
       tasks.$add(newTask);
@@ -23,7 +23,7 @@
         var date = new Date();
         var time = date.getTime();
 
-        if (task.finished == 'true') {
+        if (task.finished == true) {
           return true;
         } else if (time > task.finish_time) {
           return true;
@@ -35,7 +35,7 @@
     Task.complete = function(task) {
 
       var ref = firebase.database().ref().child("tasks").child(task.$id);
-      var obj = {finished : 'true'}
+      var obj = {finished : true}
       ref.update(obj);
 
     };
